@@ -8,7 +8,7 @@ COPY src/ ./src/
 COPY config/ ./config/
 
 # Install the package in development mode
-RUN pip install -e .
+RUN pip install --no-cache-dir .
 
 # Expose the port the app runs on
 EXPOSE 8080
