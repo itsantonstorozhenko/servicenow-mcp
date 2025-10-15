@@ -7,7 +7,10 @@ COPY pyproject.toml README.md LICENSE ./
 COPY src/ ./src/
 COPY config/ ./config/
 
-# Install the package in development mode
+# Ensure the server can find tool package config without needing an env override
+ENV TOOL_PACKAGE_CONFIG_PATH="/app/config/tool_packages.yaml"
+
+# Install the package (non-editable) to avoid runtime build/metadata checks
 RUN pip install --no-cache-dir .
 
 # Expose the port the app runs on
