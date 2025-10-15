@@ -8,12 +8,14 @@ version = "0.1.0"
 description = "A Model Context Protocol (MCP) server implementation for ServiceNow"
 readme = "README.md"
 requires-python = ">=3.11"
+license = {file = "LICENSE"}
 authors = [
     {name = "ServiceNow MCP Contributors"},
 ]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.11",
 ]
@@ -43,7 +45,7 @@ servicenow-mcp = "servicenow_mcp.cli:main"
 servicenow-mcp-sse = "servicenow_mcp.server_sse:main"
 
 [tool.hatch.build.targets.wheel]
-packages = [{ include = "servicenow_mcp", from = "src" }]
+packages = ["src/servicenow_mcp"]
 
 [tool.black]
 line-length = 100
