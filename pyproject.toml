@@ -45,7 +45,7 @@ servicenow-mcp = "servicenow_mcp.cli:main"
 servicenow-mcp-sse = "servicenow_mcp.server_sse:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/servicenow_mcp"]
+packages = [{ include = "servicenow_mcp", from = "src" }]
 
 [tool.black]
 line-length = 100
