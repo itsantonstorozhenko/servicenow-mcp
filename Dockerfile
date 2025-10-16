@@ -41,12 +41,12 @@ RUN useradd -m app
 
 COPY --from=uv /app/.venv /app/.venv
 # Copy source files (excluding .venv to avoid overwriting)
-COPY --from=uv /app/*.py /app/
+COPY --from=uv /app/ /app/
 COPY --from=uv /app/pyproject.toml /app/
 COPY --from=uv /app/uv.lock /app/
 COPY --from=uv /app/README.md /app/
 COPY --from=uv /app/LICENSE /app/
-COPY --from=uv /app/config /app/config
+# COPY --from=uv /app/config /app/config
 RUN chown -R app:app /app/.venv
 
 # Safety: ensure PyYAML is available at runtime even if lock/deps missed it
