@@ -14,7 +14,7 @@ ENV TOOL_PACKAGE_CONFIG_PATH="/app/config/tool_packages.yaml"
 RUN pip install --no-cache-dir .
 
 # Expose the port the app runs on
-EXPOSE 8080
+EXPOSE 8000
 
 # Command to run the application using the provided CLI
-CMD ["servicenow-mcp-sse", "--host=0.0.0.0", "--port=8080"] 
+CMD ["servicenow-mcp-sse", "--host=0.0.0.0", "--port=8000"] 
